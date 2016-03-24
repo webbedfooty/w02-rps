@@ -8,32 +8,24 @@ puts "\nPlayer One Ready?"
 puts "\nOne! Two! Three! Shoot!"
 
 computer_throw = ["rock", "paper", "scissors"]
-#throw = "O"
-#while throw != "R" || throw != "r" || throw != "P" || throw != "p" || throw != "S" || throw != "s"
-throw = gets.chomp
-
+throw = "J"
+def player1_throw(throw)
+while throw != "R" || throw != "r" || throw != "P" || throw != "p" || throw != "S" || throw != "s"
+  throw = gets.chomp
 if throw == "R" || throw == "r"
     p1_throw = "rock"
     puts "\nYou threw Rock!"
-    cpu_throw = computer_throw.sample
-    puts "The computer threw #{cpu_throw}!"
-
   elsif throw == "P" || throw == "p"
     p1_throw = "paper"
     puts "\nYou threw Paper!"
-    cpu_throw = computer_throw.sample
-    puts "The computer threw #{cpu_throw}!"
-
   elsif throw == "S" || throw == "s"
     p1_throw = "scissors"
     puts "\nYou threw Scissors!"
-    cpu_throw = computer_throw.sample
-    puts "The computer threw #{cpu_throw}!"
-
   else
     puts "\nI don't know what that is, try again"
 end
-#end
+player1_throw(throw)
+end
 
 def throw_outcome(p1_throw, cpu_throw)
   if p1_throw == cpu_throw
@@ -54,3 +46,4 @@ def throw_outcome(p1_throw, cpu_throw)
   end
   outcome
 end
+throw_outcome(p1_throw, cpu_throw)
