@@ -22,5 +22,17 @@ if throw == "r"
     p1_throw = "scissors"
     puts "\nYou threw Scissors!"
 end
-rps = ["rock", "paper", "scissors"]
+
+rps = ["r", "p", "s"]
 computer_throw = rps.sample
+
+if computer_throw == "r"
+    cpu_throw = "rock"
+    puts "\nThe Computer threw Rock!"
+  elsif computer_throw == "p"
+    cpu_throw = "paper"
+    puts "\nThe Computer threw Paper!"
+  else computer_throw == "s"
+    cpu_throw = "scissors"
+    puts "\nThe Computer threw Scissors!"
+end
