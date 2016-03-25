@@ -1,7 +1,7 @@
 require "pry"
 require_relative "players.rb"
 
-
+players = []
 def create_player
   puts "\nWelcome to Rock! Paper! Scissors!"
   puts "\nLet's create your RPS Player "
@@ -16,6 +16,8 @@ def create_player
 
   Player.new(name: name, left_right: left_right, country: country)
 end
+
+players << create_player
 
 def player_profile(player)
   puts "\n\n\nPlayer Profile:"
@@ -38,7 +40,7 @@ def list_players(arr)
 end
 
 def pick_a_player(players)
-  players = nil
+#  players = nil
   if !players.empty?
 
     player.each_with_index do |player, index|
@@ -59,12 +61,11 @@ def pick_a_player(players)
   list_players(player)
 end
 
-players = []
 choice = 5
 
 while choice != 0
   puts "\nHere are your options:\n1. Create New Player\n2. List of Players \n3. Review a specific Player \n0. Exit"
-  print "What is your choice? "
+  print "\nWhat is your choice? "
   choice = gets.chomp.to_i
 
   if choice == 1

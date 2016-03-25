@@ -1,7 +1,7 @@
 # players.rb
 require "pry"
 
-class Players
+class Player
   attr_accessor :name, :left_right, :country
 
   def initialize(options={})
