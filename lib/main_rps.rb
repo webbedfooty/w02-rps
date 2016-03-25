@@ -3,15 +3,15 @@ require_relative "players.rb"
 
 
 def create_player
-  puts "\n\nWelcome to Rock! Paper! Scissors!"
-  puts "\n\n Let's create your RPS Player "
-  print "Please enter your name "
+  puts "\nWelcome to Rock! Paper! Scissors!"
+  puts "\nLet's create your RPS Player "
+  print "\nPlease enter your name "
   name = gets.chomp.capitalize
 
-  print "Are you left-handed or right-handed? "
+  print "\nAre you left-handed or right-handed? "
   left_right = gets.chomp.capitalize
 
-  print "Which country do you represent? "
+  print "\nWhich country do you represent? "
   country = gets.chomp.capitalize
 
   Player.new(name: name, left_right: left_right, country: country)
@@ -39,14 +39,12 @@ end
 
 def pick_a_player(players)
   players = nil
-
   if !players.empty?
-    # Display the unicorns
+
     player.each_with_index do |player, index|
       puts "#{index}: #{player.name}"
     end
 
-    # Prompt for choice
     print "Please select your player "
     choice = gets.chomp.to_i
 
@@ -69,10 +67,9 @@ while choice != 0
   print "What is your choice? "
   choice = gets.chomp.to_i
 
-  # MAIN MENU
   if choice == 1
     players << create_player
-    list_players(players.last)
+    player_profile(players.last)
   elsif choice == 2
     list_players(players)
   elsif choice == 3
