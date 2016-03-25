@@ -1,7 +1,11 @@
 # Phase 0: Rock Paper Scissors
 # 1 round only, person vs. computer
 # result determined randomly and printed at end
-#
+
+require "pry"
+require_relative "players.rb"
+require_relative "main_rps.rb"
+
 # Step 0: Basic instructions
 puts "\nWelcome to Rock! Paper! Scissors!"
 puts "\nTo select Rock, enter r"
