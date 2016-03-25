@@ -37,10 +37,9 @@ def list_players(arr)
   end
 end
 
+  players = nil
 def pick_a_player(players)
-  #players = nil
   if !players.empty?
-
     players.each_with_index do |player, index|
       puts "#{index}: #{player.name}"
     end
@@ -53,10 +52,12 @@ def pick_a_player(players)
       print "Please select your player "
       choice = gets.chomp.to_i
     end
-
     player = players[choice]
-  end
+  #end
   player_profile(player)
+  else
+    puts "We don't have any registered players yet."
+
 end
 
 choice = 5
