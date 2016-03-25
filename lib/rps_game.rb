@@ -4,9 +4,9 @@
 #
 # Step 0: Basic instructions
 puts "\nWelcome to Rock! Paper! Scissors!"
-puts "\nTo select Rock, enter R"
-puts "To select Paper, enter P"
-puts "To select Scissors, enter S"
+puts "\nTo select Rock, enter r"
+puts "To select Paper, enter p"
+puts "To select Scissors, enter s"
 puts "\nPlayer One Ready?"
 puts "\nOne! Two! Three! Shoot!"
 #######################################################
