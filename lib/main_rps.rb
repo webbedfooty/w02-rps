@@ -53,11 +53,10 @@ def pick_a_player(players)
       choice = gets.chomp.to_i
     end
     player = players[choice]
-  #end
-  player_profile(player)
+    player_profile(player)
   else
     puts "We don't have any registered players yet."
-
+  end
 end
 
 choice = 5
