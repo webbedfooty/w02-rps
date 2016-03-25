@@ -1,7 +1,7 @@
 require "pry"
 require_relative "players.rb"
 
-players = []
+
 def create_player
   puts "\nWelcome to Rock! Paper! Scissors!"
   puts "\nLet's create your RPS Player "
@@ -16,8 +16,6 @@ def create_player
 
   Player.new(name: name, left_right: left_right, country: country)
 end
-
-players << create_player
 
 def player_profile(player)
   puts "\n\n\nPlayer Profile:"
@@ -40,17 +38,17 @@ def list_players(arr)
 end
 
 def pick_a_player(players)
-#  players = nil
+  #players = nil
   if !players.empty?
 
-    player.each_with_index do |player, index|
+    players.each_with_index do |player, index|
       puts "#{index}: #{player.name}"
     end
 
     print "Please select your player "
     choice = gets.chomp.to_i
 
-    if choice < 0 || choice >= players.length
+    while choice < 0 || choice >= players.length
       puts "Not a valid choice. Let's try again."
       print "Please select your player "
       choice = gets.chomp.to_i
@@ -58,10 +56,11 @@ def pick_a_player(players)
 
     player = players[choice]
   end
-  list_players(player)
+  player_profile(player)
 end
 
 choice = 5
+players = []
 
 while choice != 0
   puts "\nHere are your options:\n1. Create New Player\n2. List of Players \n3. Review a specific Player \n0. Exit"
@@ -76,8 +75,8 @@ while choice != 0
   elsif choice == 3
     pick_a_player(players)
   elsif choice == 0
-    puts "\n\nGoodbye!"
+    puts "\nGoodbye!"
   else
-    puts "\n\nSorry! Not a valid input"
+    puts "\nSorry! Not a valid input"
   end
 end
