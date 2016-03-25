@@ -45,12 +45,12 @@ end
 
 if computer_throw == throw
     puts "It's a tie!"
-  elsif (computer_throw = "r" && throw = "p") ||
-    (computer_throw = "s" && throw = "r") ||
-    (computer_throw = "p" && throw = "s")
+  elsif (computer_throw == "r" && throw == "p") ||
+    (computer_throw == "s" && throw == "r") ||
+    (computer_throw == "p" && throw == "s")
     puts "You win!"
-  else (computer_throw = "r" && throw = "s") ||
-    (computer_throw = "s" && throw = "p") ||
-    (computer_throw = "p" && throw = "r")
+  else (computer_throw == "r" && throw == "s") ||
+    (computer_throw == "s" && throw == "p") ||
+    (computer_throw == "p" && throw == "r")
     puts "You lose!"
 end
