@@ -1,5 +1,5 @@
 require "pry"
-require_relative "lib/players.rb"
+require_relative "players.rb"
 
 
 def create_player
@@ -15,4 +15,11 @@ def create_player
   country = gets.chomp.capitalize
 
   Player.new(name: name, left_right: left_right, country: country)
+end
+
+def player_profile(player)
+  puts "\n\n\nPlayer Profile:"
+  puts "Player name: #{player.name}."
+  puts "Shoots #{player.left_right}."
+  puts "Representing #{player.country}."
 end
