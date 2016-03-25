@@ -36,3 +36,27 @@ def list_players(arr)
     puts "We don't have any registered players yet."
   end
 end
+
+def pick_a_player(players)
+  players = nil
+
+  if !players.empty?
+    # Display the unicorns
+    player.each_with_index do |player, index|
+      puts "#{index}: #{player.name}"
+    end
+
+    # Prompt for choice
+    print "Please select your player "
+    choice = gets.chomp.to_i
+
+    if choice < 0 || choice >= players.length
+      puts "Not a valid choice. Let's try again."
+      print "Please select your player "
+      choice = gets.chomp.to_i
+    end
+
+    player = players[choice]
+  end
+  list_players(player)
+end
