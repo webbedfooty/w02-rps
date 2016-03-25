@@ -60,3 +60,26 @@ def pick_a_player(players)
   end
   list_players(player)
 end
+
+players = []
+choice = 5
+
+while choice != 0
+  puts "\nHere are your options:\n1. Create New Player\n2. List of Players \n3. Review a specific Player \n0. Exit"
+  print "What is your choice? "
+  choice = gets.chomp.to_i
+
+  # MAIN MENU
+  if choice == 1
+    players << create_player
+    list_players(players.last)
+  elsif choice == 2
+    list_players(players)
+  elsif choice == 3
+    pick_a_player(players)
+  elsif choice == 0
+    puts "\n\nGoodbye!"
+  else
+    puts "\n\nSorry! Not a valid input"
+  end
+end
