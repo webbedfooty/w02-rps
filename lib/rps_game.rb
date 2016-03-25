@@ -13,13 +13,10 @@ while throw != "r" && throw != "p" && throw != "s"
 end
 
 if throw == "r"
-    p1_throw = "rock"
     puts "\nYou threw Rock!"
   elsif throw == "p"
-    p1_throw = "paper"
     puts "\nYou threw Paper!"
   else throw == "s"
-    p1_throw = "scissors"
     puts "\nYou threw Scissors!"
 end
 
@@ -27,12 +24,25 @@ rps = ["r", "p", "s"]
 computer_throw = rps.sample
 
 if computer_throw == "r"
-    cpu_throw = "rock"
     puts "\nThe Computer threw Rock!"
   elsif computer_throw == "p"
-    cpu_throw = "paper"
     puts "\nThe Computer threw Paper!"
   else computer_throw == "s"
-    cpu_throw = "scissors"
     puts "\nThe Computer threw Scissors!"
+end
+
+if computer_throw == throw
+    puts "It's a tie!"
+  elsif computer_throw = "r" && throw = "p"
+    puts "You win!"
+  elsif computer_throw = "s" && throw = "r"
+    puts "You win!"
+  elsif computer_throw = "p" && throw = "s"
+    puts "You win!"
+  elsif computer_throw = "r" && throw = "s"
+    puts "You lose!"
+  elsif computer_throw = "s" && throw = "p"
+    puts "You lose!"
+  else computer_throw = "p" && throw = "r"
+    puts "You lose!"
 end
