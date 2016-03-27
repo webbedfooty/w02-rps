@@ -2,11 +2,10 @@
 require "pry"
 
 class Player
-  attr_accessor :name, :left_right
+  attr_accessor :name
 
   def initialize(options={})
     @name       = options[:name]
-    @left_right = options[:left_right]
   end
 
 end
