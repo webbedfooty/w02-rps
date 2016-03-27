@@ -11,6 +11,7 @@ players = []
 #
 #
 while choice != 0
+  puts "\nWelcome to Rock! Paper! Scissors!"
   puts "\nHere are your options:\n1. Create New Player One \n2. Create New
   Player Two \n3. Select number of rounds to play \n0. Exit"
   print "\nWhat is your choice? "
@@ -24,12 +25,24 @@ while choice != 0
     player_profile(players.last)
   elsif choice == 3
     n_rounds = gets.chomp.to_i
+    rounds_to_play(n_rounds)
   elsif choice == 0
     puts "\nGoodbye!"
   else
     puts "\nSorry! Not a valid input"
   end
 end
+
+def rounds_to_play(n_rounds)
+  if n_rounds == 1
+    puts "You've selected to play just 1 round"
+  elsif n_rounds % 2 == 0
+    puts "Please select an odd number of rounds to play"
+  elsif n_rounds % 2 != 0
+    puts "Get ready - We'll play best of #{n_rounds}"
+  end
+end
+
 
 #######################################################
 # Method for creating a player profile utilizing player class
@@ -38,7 +51,6 @@ end
 #
 #
 def create_player
-  puts "\nWelcome to Rock! Paper! Scissors!"
   puts "\nLet's create your RPS Player "
   print "\nPlease enter your name "
   name = gets.chomp.capitalize
