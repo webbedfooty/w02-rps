@@ -6,50 +6,62 @@ require "pry"
 #require_relative "players.rb"
 #require_relative "main_rps.rb"
 # Step 0: Basic instructions
-puts "\nWelcome to Rock! Paper! Scissors!"
+puts "\nA Reminder of the Rules"
 puts "\nTo select Rock, enter r"
 puts "To select Paper, enter p"
 puts "To select Scissors, enter s"
 puts "\nPlayer One Ready?"
 puts "\nOne! Two! Three! Shoot!"
-#######################################################
-# Step 1: Takes input from live player and downcases the entry for consistency
-# Input is registered and printed; incorrect entries result in repeat request
-throw = gets.chomp.downcase
-while throw != "r" && throw != "p" && throw != "s"
+
+def player_one_throw(p1_throw)
+  puts "\nPlayer One Ready?"
+  puts "\nOne! Two! Three! Shoot!"
+    p1_throw = gets.chomp.downcase
+  while p1_throw != "r" && throw != "p" && throw != "s"
+    puts "\nI don't know what that is - please try again"
+    p1_throw = gets.chomp.downcase
+  end
+end
+
+def player_two_throw(p2_throw)
+puts "\nPlayer Two Ready?"
+puts "\nOne! Two! Three! Shoot!"
+p2_throw = gets.chomp.downcase
+while p2_throw != "r" && throw != "p" && throw != "s"
   puts "\nI don't know what that is - please try again"
-  throw = gets.chomp.downcase
+  p2_throw = gets.chomp.downcase
 end
-if throw == "r"
-    puts "\nYou threw Rock!"
-  elsif throw == "p"
-    puts "\nYou threw Paper!"
-  else throw == "s"
-    puts "\nYou threw Scissors!"
-end
-#######################################################
-# Step 2: registers randomly selected play for computer and prints result
-rps = ["r", "p", "s"]
-computer_throw = rps.sample
 
-if computer_throw == "r"
-    puts "\nThe Computer threw Rock!"
-  elsif computer_throw == "p"
-    puts "\nThe Computer threw Paper!"
-  else computer_throw == "s"
-    puts "\nThe Computer threw Scissors!"
+if p1_throw == "r"
+    puts "\nPlayer One threw Rock!"
+  elsif p1_throw == "p"
+    puts "\nPlayer One threw Paper!"
+  else p1_throw == "s"
+    puts "\nPlayer One threw Scissors!"
 end
-#######################################################
-# Step 3: Compares players input to computer entry and prints result
 
-if computer_throw == throw
+if p2_throw == "r"
+    puts "\nPlayer Two threw Rock!"
+  elsif p2_throw == "p"
+    puts "\nPlayer Two threw Paper!"
+  else p2_throw == "s"
+    puts "\nPlayer Two threw Scissors!"
+end
+
+#######################################################
+# Step 3: Compares players input to each other and prints result
+p1_record = 0
+p2_record = 0
+if p1_throw == p2_throw
     puts "It's a tie!"
-  elsif (computer_throw == "r" && throw == "p") ||
-    (computer_throw == "s" && throw == "r") ||
-    (computer_throw == "p" && throw == "s")
-    puts "You win!"
-  else (computer_throw == "r" && throw == "s") ||
-    (computer_throw == "s" && throw == "p") ||
-    (computer_throw == "p" && throw == "r")
-    puts "You lose!"
+  elsif (p1_throw == "r" && p2_throw == "s") ||
+    (p1_throw == "s" && p2_throw == "p") ||
+    (p1_throw == "p" && p2_throw == "r")
+    puts "Player One Wins!"
+    p1_record += 1
+  else (p1_throw == "r" && p2_throw == "p") ||
+    (p1_throw == "s" && p2_throw == "r") ||
+    (p1_throw == "p" && p2_throw == "s")
+    puts "Player Two wins!"
+    p2_record += 1
 end
