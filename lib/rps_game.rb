@@ -32,28 +32,31 @@ while p2_throw != "r" && throw != "p" && throw != "s"
   p2_throw = gets.chomp.downcase
 end
 
-if p1_throw == "r"
+def throw_results(p1_throw, p2_throw)
+  if p1_throw == "r"
     puts "\nPlayer One threw Rock!"
   elsif p1_throw == "p"
     puts "\nPlayer One threw Paper!"
   else p1_throw == "s"
     puts "\nPlayer One threw Scissors!"
-end
+  end
 
-if p2_throw == "r"
+  if p2_throw == "r"
     puts "\nPlayer Two threw Rock!"
   elsif p2_throw == "p"
     puts "\nPlayer Two threw Paper!"
   else p2_throw == "s"
     puts "\nPlayer Two threw Scissors!"
+  end
 end
-
 #######################################################
-# Step 3: Compares players input to each other and prints result
+
 p1_record = 0
 p2_record = 0
-if p1_throw == p2_throw
+while p1_throw == p2_throw
     puts "It's a tie!"
+    player_one_throw(p1_throw)
+    player_two_throw(p2_throw)
   elsif (p1_throw == "r" && p2_throw == "s") ||
     (p1_throw == "s" && p2_throw == "p") ||
     (p1_throw == "p" && p2_throw == "r")
