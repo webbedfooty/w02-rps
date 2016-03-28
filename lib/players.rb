@@ -2,14 +2,13 @@
 require "pry"
 
 class Player
-  attr_accessor :name
 
-  def initialize(options={})
-    @name       = options[:name]
-  end
+  attr_accessor :name, :wins, :throw
 
-  def wins
-    @wins
+  def initialize(name:, wins:, throw:)
+    @name = name
+    @description = wins
+    @throw = throw
   end
 end
 

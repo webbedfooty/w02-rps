@@ -23,7 +23,6 @@ def player_one_throw
       puts "\nI don't know what that is - please try again"
       p1_throw = gets.chomp.downcase
     end
-    p1_throw
 
   if p1_throw == "r"
     puts "\nPlayer One threw Rock!"
@@ -32,6 +31,7 @@ def player_one_throw
   else p1_throw == "s"
     puts "\nPlayer One threw Scissors!"
   end
+  p1_throw
 end
 #######################################################
 def player_two_throw
@@ -41,7 +41,6 @@ def player_two_throw
     puts "\nI don't know what that is - please try again"
     p2_throw = gets.chomp.downcase
   end
-  p2_throw
 
   if p2_throw == "r"
     puts "\nPlayer Two threw Rock!"
@@ -50,6 +49,7 @@ def player_two_throw
   else p2_throw == "s"
     puts "\nPlayer Two threw Scissors!"
   end
+  p2_throw
 end
 
 def throw_score(p1_throw, p2_throw)
@@ -80,8 +80,8 @@ def game(player_one, player_two, n_rounds)
   p1_record = 0
   p2_record = 0
   while x != n_rounds
-    player_one_throw
-    player_two_throw
+    p1_throw = player_one_throw
+    p2_throw = player_two_throw
     throw_score(p1_throw, p2_throw)
   x = x + 1
   end
