@@ -62,13 +62,13 @@ def throw_score(p1_throw, p2_throw)
     (p1_throw == "s" && p2_throw == "p") ||
     (p1_throw == "p" && p2_throw == "r")
       puts "Player One Wins!"
-      p1_record = p1_record + 1
+      player.player_one = player(wins) + 1
   else
     (p1_throw == "r" && p2_throw == "p") ||
     (p1_throw == "s" && p2_throw == "r") ||
     (p1_throw == "p" && p2_throw == "s")
       puts "Player Two wins!"
-      p2_record = p2_record + 1
+      player.player_two = player(wins) + 1
   end
 puts "The score is #{player_one} #{p1_record} to #{player_two} #{p2_record}"
 end

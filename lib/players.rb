@@ -8,6 +8,9 @@ class Player
     @name       = options[:name]
   end
 
+  def wins
+    @wins
+  end
 end
 
 #binding.pry
