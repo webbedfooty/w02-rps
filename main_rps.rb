@@ -10,7 +10,6 @@ def rounds_to_play(n_rounds)
       n_rounds = gets.chomp.to_i
   end
   puts "Get ready - We'll play best of #{n_rounds}"
-
 end
 #######################################################
 def create_player
@@ -19,27 +18,32 @@ def create_player
 end
 #######################################################
 x = 0
+p1_record = 0
+p2_record = 0
 #############################################
 def game(player_one, player_two, n_rounds)
+  x = 0
+  p1_record = 0
+  p2_record = 0
+  while x != n_rounds
 
-  def player_one_throw#(p1_throw)
-    puts "\nPlayer One Ready?   One! Two! Three! Shoot!"
-      p1_throw = gets.chomp.downcase
-    while p1_throw != "r" && p1_throw != "p" && p1_throw != "s"
-      puts "\nI don't know what that is - please try again"
-      #p1_throw = gets.chomp.downcase
+    def player_one_throw#(p1_throw)
+      puts "\nPlayer One Ready?   One! Two! Three! Shoot!"
+        p1_throw = gets.chomp.downcase
+        while p1_throw != "r" && p1_throw != "p" && p1_throw != "s"
+          puts "\nI don't know what that is - please try again"
+          #p1_throw = gets.chomp.downcase
+        end
+        p1_throw
+
+      if p1_throw == "r"
+        puts "\nPlayer One threw Rock!"
+      elsif p1_throw == "p"
+        puts "\nPlayer One threw Paper!"
+      else p1_throw == "s"
+        puts "\nPlayer One threw Scissors!"
+      end
     end
-    p1_throw
-
-    if p1_throw == "r"
-      puts "\nPlayer One threw Rock!"
-    elsif p1_throw == "p"
-      puts "\nPlayer One threw Paper!"
-    else p1_throw == "s"
-      puts "\nPlayer One threw Scissors!"
-    end
-
-  end
 #######################################################
   def player_two_throw
     puts "\nPlayer Two Ready?   One! Two! Three! Shoot!"
@@ -51,52 +55,43 @@ def game(player_one, player_two, n_rounds)
     p2_throw
 
     if p2_throw == "r"
-      puts "\nPlayer One threw Rock!"
+      puts "\nPlayer Two threw Rock!"
     elsif p2_throw == "p"
-      puts "\nPlayer One threw Paper!"
+      puts "\nPlayer Two threw Paper!"
     else p2_throw == "s"
-      puts "\nPlayer One threw Scissors!"
+      puts "\nPlayer Two threw Scissors!"
     end
-
   end
 
-#######################################################
-  p1_record = 0
-  p2_record = 0
   def throw_score(p1_throw, p2_throw)
     while p1_throw == p2_throw
       puts "It's a tie!"
-      player_one_throw#(p1_throw)
-      player_two_throw#(p2_throw)
+        player_one_throw#(p1_throw)
+        player_two_throw#(p2_throw)
     end
-    if (p1_throw == "r" && p2_throw == "s") ||
+
+    if
+      (p1_throw == "r" && p2_throw == "s") ||
       (p1_throw == "s" && p2_throw == "p") ||
       (p1_throw == "p" && p2_throw == "r")
-      puts "Player One Wins!"
-      p1_record += 1
-    else (p1_throw == "r" && p2_throw == "p") ||
+        puts "Player One Wins!"
+        p1_record = p1_record + 1
+    else
+      (p1_throw == "r" && p2_throw == "p") ||
       (p1_throw == "s" && p2_throw == "r") ||
       (p1_throw == "p" && p2_throw == "s")
-      puts "Player Two wins!"
-      p2_record += 1
+        puts "Player Two wins!"
+        p2_record = p2_record + 1
+    end
+    x = x + 1
+    puts "The score is #{player_one} #{p1_record} to #{player_two} #{p2_record}"
     end
   end
-
-x = 0
-  while x != n_rounds
-    player_one_throw
-    player_two_throw
-    #throw_results(p1_throw, p2_throw)
-    throw_score(p1_throw, p2_throw)
-    x+=1
-    puts "The score is #{player_one} #{p1_record} to #{player_two} #{p2_record}"
-  end
-
-  if p1_record > p2_record
-    puts "#{player_one} is the overall winner #{p1_record} to #{p2_record}"
-  else
-    puts "#{player_two} is the overall winner #{p2_record} to #{p1_record}"
-  end
+#  if p1_record > p2_record
+#    puts "#{player_one} is the overall winner #{p1_record} to #{p2_record}"
+#  else
+#    puts "#{player_two} is the overall winner #{p2_record} to #{p1_record}"
+#  end
 end
 
 puts "\nWelcome to Rock! Paper! Scissors!"
