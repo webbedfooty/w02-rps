@@ -23,7 +23,7 @@ def player_one_throw
       puts "\nI don't know what that is - please try again"
       p1_throw = gets.chomp.downcase
     end
-
+    Player.throw = p1_throw
   if p1_throw == "r"
     puts "\nPlayer One threw Rock!"
   elsif p1_throw == "p"
@@ -41,7 +41,7 @@ def player_two_throw
     puts "\nI don't know what that is - please try again"
     p2_throw = gets.chomp.downcase
   end
-
+    Player.throw = p2_throw
   if p2_throw == "r"
     puts "\nPlayer Two threw Rock!"
   elsif p2_throw == "p"
@@ -97,11 +97,9 @@ player_one ="blank"
 player_two = "blank"
 players = []
 puts "\nPlayer One, please enter your name"
-players << create_player
-  player_one
+player_one << Player.name
 puts "\nPlayer Two, please enter your name"
-players << create_player
-  player_two
+player_two << Player.name
 puts "How many rounds would you like to play? "
   n_rounds = gets.chomp.to_i
   rounds_to_play(n_rounds)
