@@ -3,18 +3,18 @@ require "pry"
 
 class Player
 
-  attr_accessor :name, :wins, :throw
-
-  def initialize(name:)
-    @name =name
-  end
+  attr_accessor :name, :throw, :wins
 
   def
-    @wins .wins
+    @name .name
   end
 
   def
     @throw .throw
+  end
+
+  def
+    @wins .wins
   end
 
 end
